@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
     initBmp(&image);
 
     switch (argc) {
-        case 7: {
+        case 8: {
             int tflags[3] = {1,1,1};
             FILE* file;
 
@@ -94,7 +94,7 @@ int main(int argc, char **argv) {
             freeBmp(&output);
             break;
         }
-        case 5: {
+        case 7: {
             uint8_t output_idx = 0;
 
             int tflags2[2] = {1,1};
