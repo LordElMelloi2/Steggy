@@ -94,7 +94,7 @@ int main(int argc, char **argv) {
             freeBmp(&output);
             break;
         }
-        case 7: {
+        case 6: {
             uint8_t output_idx = 0;
 
             int tflags2[2] = {1,1};
