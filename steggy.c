@@ -65,7 +65,12 @@ int putFileInBmp(Bmp* result, Bmp* original, FILE* fp, const char* fpname){
     error = fileByteSize(&fpSize, fp);
     if (error) return error;
 
-    printf("Checking size:\n\t-[targetFile: %d][fileToHidde: %d]\n", original->pixelCount, SIZE_TO_HIDDE(fpSize));
+//    printf("Checking size:\n\t-[targetFile: %d][fileToHidde: %d]\n", original->pixelCount, SIZE_TO_HIDDE(fpSize));
+    printf("Checking size:\n\t-[targetFile: ");
+    printf(GRN "%d" COLOR_RESET, original->pixelCount);
+    printf("][fileToHidde: ");
+    printf(GRN "%d" COLOR_RESET, SIZE_TO_HIDDE(fpSize));
+    printf("]\n");
     if (original->pixelCount < SIZE_TO_HIDDE(fpSize)) return 1;
 
     //Buffers to read and write

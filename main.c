@@ -5,12 +5,6 @@
 #include "steggy.h"
 #include "token.h"
 
-void printArgc(int argc, char** argv){
-    for (int i = 0; i < argc; i++) {
-        printf("arg[%d]: %s\n", i, argv[i]);
-    }
-}
-
 int checkIfFlag(char* ptr) {
     if (ptr == NULL && ptr[1] != '-') return 0;
     return 1;
@@ -142,10 +136,11 @@ int main(int argc, char **argv) {
             printf("Hidden file output as %s.[extension]...\n", token2[output_idx].value);
             break;
         }
-        default:
-            printf("No valid command provided\n");
+        default: {
+            printf(RED "No valid command provided\n" COLOR_RESET);
             exit(1);
             break;
+        }
 
     }
     freeBmp(&image);
